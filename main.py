@@ -1,3 +1,4 @@
+#! usr/bin/env Python
 import logging
 
 username = [
