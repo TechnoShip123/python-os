@@ -2,12 +2,12 @@ import logging
 
 username = [
     'Jack',
-    'username2',
+    'Kelsy',
     'username3'
 ]
 password = {
     'Jack': 'Jack123',
-    'username2': 'password2',
+    'Kelsy': 'Kelsy123',
     'username3': 'password3',
 }
 logging.basicConfig(filename='incidents.log', filemode='a', level=logging.WARN, format='%(asctime)s - %(message)s',
@@ -24,6 +24,3 @@ if Pinput != password[Uinput]:
     exit('Incorrect password. This incident will be reported.')
 
 print('Valid credentials. Welcome to the system! :D')
-
-
-# TODO: Find a way to implement Hashing
