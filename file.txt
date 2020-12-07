@@ -1,2 +1,2 @@
-this is a file
-lorem impsum
+Sample Text, Sample Text, Sample Text
+Add more files in the project folder for the program to read, or update this file with text!
