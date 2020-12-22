@@ -3,9 +3,9 @@ from tkinter import *
 from betterPrint import bcolors
 import os
 
-
 # Designing window for registration
-# Self Notes: The current background color is teal, so try finishing your TODO: Find a good background color.
+# Self Notes: The current background color is teal
+
 
 def register():
     global register_screen
@@ -62,7 +62,7 @@ def login():
     password_login_entry.pack()
     Label(login_screen, text="").pack()
     Button(login_screen, text="Login", width=10, height=1, command=login_verify).pack()
-# TODO: Improve the above to be a little more GUI friendly perhaps?
+# TODO: Improve the above to be a little more GUI friendly perhaps? But how? :thonk:
 
 
 # Implementing event on register button
