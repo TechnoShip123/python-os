@@ -6,6 +6,7 @@ import os
 # Designing window for registration
 # Self Notes: The current background color is teal
 
+loginsuccess = False
 
 def register():
     global register_screen
@@ -141,6 +142,9 @@ def user_not_found():
 
 def delete_login_success():
     login_success_screen.destroy()
+    main_screen.destroy()
+    global loginsuccess
+    loginsuccess = True
 
 
 def delete_password_not_recognised():
@@ -173,7 +177,7 @@ def openfile(file):
     return f.read()
 
 
-while True:
+while loginsuccess is True:
     if 'openfile' in (input('Jack >> ')):
         user_file_input = input('What file would you like to input? >> ')
         print(openfile(user_file_input))
