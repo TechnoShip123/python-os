@@ -1,6 +1,7 @@
 #! bin/var/env Python
 from tkinter import *
 from betterPrint import bcolors
+import time
 import os
 
 # Designing window for registration
@@ -87,6 +88,7 @@ def register_user():
 # Implementing event on login button
 
 def login_verify():
+    global username1
     username1 = username_verify.get()
     password1 = password_verify.get()
     username_login_entry.delete(0, END)
@@ -174,6 +176,9 @@ def main_account_screen():
 
 main_account_screen()
 
+# PHASE TWO -----------------------------------------------------------------------------------------------------------
+# noinspection PyUnboundLocalVariable
+current_usr = username1
 
 def openfile(file):
     f = open(file, 'r')
@@ -184,7 +189,7 @@ def openfile(file):
 
 # Open File command (`openfile`)
 while loginsuccess is True:
-    Uinput = input('Jack >> ')  # TODO: Make it like the original program where the name would change based on the user.
+    Uinput = input(current_usr + '>> ')
     if 'openfile' in Uinput:
         user_file_input = input('What file would you like to input? >> ')
         print(openfile(user_file_input))
