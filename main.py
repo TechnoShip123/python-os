@@ -67,9 +67,6 @@ def login():
     Button(login_screen, text="Login", width=10, height=1, command=login_verify).pack()
 
 
-# TODO: Improve the above to be a little more GUI friendly perhaps? But how? :thonk:
-
-
 # Implementing event on register button
 
 def register_user():
