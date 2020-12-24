@@ -222,6 +222,5 @@ while loginsuccess is True:
               ', then at the next prompt type in', f"{bcolors.OKBLUE}{bcolors.UNDERLINE}file.txt{bcolors.ENDC}")
     elif 'help(exit)' == Uinput:
         print('The', f"{bcolors.OKGREEN}{bcolors.BOLD}exit{bcolors.ENDC}", 'function will safely exit the program.')
-
     else:
         print(f"{bcolors.FAIL}{bcolors.BOLD}Error: Invalid Command.{bcolors.ENDC}")
