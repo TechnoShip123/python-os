@@ -195,18 +195,31 @@ def openfile(file):
 
 # Open File command (`openfile`)
 while loginsuccess is True:
-    Uinput = input(current_usr + '>> ')
-    if 'openfile' in Uinput:
+    Uinput = input(current_usr + ' >> ')
+    if 'openfile' == Uinput:
         user_file_input = input('What file would you like to input? >> ')
         print(openfile(user_file_input))
-    elif 'exit' in Uinput:  # Exit Command
+    elif 'exit' == Uinput:  # Exit Command
         print(f"{bcolors.OKBLUE}{bcolors.BOLD}Logging Out...{bcolors.ENDC}")
         exit()
-    elif 'help' in Uinput:  # Help Command, maybe make it open a help file instead?
+    elif 'help' == Uinput:  # Help Command, maybe make it open a help file instead?
         print(f"{bcolors.OKCYAN}{bcolors.BOLD}This a list of available commands:\n{bcolors.ENDC}")
         print(f"{bcolors.OKGREEN}{bcolors.BOLD}help{bcolors.ENDC}", ' - This function lists available commands.')
+        print(f"{bcolors.OKGREEN}{bcolors.BOLD}help(){bcolors.ENDC}", ' - This gives a detailed explanation on the command given in the parenthesis. For example,',
+              f"{bcolors.OKBLUE}{bcolors.UNDERLINE}help(openfile){bcolors.ENDC}")
         print(f"{bcolors.OKGREEN}{bcolors.BOLD}openfile{bcolors.ENDC}", ' - This command opens a file stored in the same folder, just type in the file name at the next '
                                                                         'prompt with the file extension, for example,', f"{bcolors.OKBLUE}{bcolors.UNDERLINE}file.txt{bcolors.ENDC}")
         print('')
+    elif 'help(help)' == Uinput:  # The help() command
+        print('The', f"{bcolors.OKGREEN}{bcolors.BOLD}help{bcolors.ENDC}",
+              'function will list the available commands. However, typing', f"{bcolors.OKBLUE}{bcolors.UNDERLINE}help(){bcolors.ENDC}",
+              'with a '
+              'command in the parenthesis will give a detailed explanation on what that command does, and how to use it.')
+    elif 'help(openfile)' == Uinput:
+        print('The', f"{bcolors.OKGREEN}{bcolors.BOLD}openfile{bcolors.ENDC}", 'function will open and read the desired file. After typing in',
+              f"{bcolors.OKBLUE}{bcolors.UNDERLINE}openfile{bcolors.ENDC}", 'you will be prompted to type in the file name. From there you type in the file name with its extension. For example, '
+                                                                            'I could type', f"{bcolors.OKBLUE}{bcolors.UNDERLINE}openfile{bcolors.ENDC}",
+              ', then at the next prompt type in', f"{bcolors.OKBLUE}{bcolors.UNDERLINE}file.txt{bcolors.ENDC}")
+
     else:
         print(f"{bcolors.FAIL}{bcolors.BOLD}Error: Invalid Command.{bcolors.ENDC}")
