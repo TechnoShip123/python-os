@@ -1,5 +1,7 @@
 #! usr/bin/env Python
 import logging
+
+
 def openfile(file):
     f = open(file, 'r')
     return f.read()
@@ -17,15 +19,18 @@ password = {
 }
 logging.basicConfig(filename='incidents.log', filemode='a', level=logging.WARN, format='%(asctime)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S')
+# Random Stuff
+
+
+# Random Stuff
 
 selected_user = input('Username >> ')
 if selected_user not in username:
     logging.error('Attempted login with invalid USERNAME')
     exit('Invalid username. This incident will be reported.')
 
-
 Pinput = input('Password >> ')
-if Pinput != password[selected_user]:
+if Pinput != password[ selected_user ]:
     logging.error('Attempted login with invalid PASSWORD')
     exit('Incorrect password. This incident will be reported.')
 

@@ -2,6 +2,7 @@
 from tkinter import *
 from betterPrint import bcolors
 import time
+import logging
 import os
 
 # Designing window for registration
@@ -9,6 +10,8 @@ import os
 
 loginsuccess = False
 Uinput = type(str)
+logging.basicConfig(filename='incidents.log', filemode='a', level=logging.WARN, format='%(asctime)s - %(message)s',
+                    datefmt='%d-%b-%y %H:%M:%S')
 
 
 def register():
@@ -102,9 +105,11 @@ def login_verify():
             login_success()
 
         else:
+            logging.error('Attempted login with invalid PASSWORD')
             password_not_recognised()
 
     else:
+        logging.error('Attempted login with invalid USERNAME')
         user_not_found()
 
 
@@ -180,6 +185,7 @@ main_account_screen()
 # noinspection PyUnboundLocalVariable
 current_usr = username1
 
+
 def openfile(file):
     f = open(file, 'r')
     return f.read()
@@ -196,6 +202,11 @@ while loginsuccess is True:
     elif 'exit' in Uinput:  # Exit Command
         print(f"{bcolors.OKBLUE}{bcolors.BOLD}Logging Out...{bcolors.ENDC}")
         exit()
+    elif 'help' in Uinput:  # Help Command, maybe make it open a help file instead?
+        print(f"{bcolors.OKCYAN}{bcolors.BOLD}This a list of available commands:\n{bcolors.ENDC}")
+        print(f"{bcolors.OKGREEN}{bcolors.BOLD}help{bcolors.ENDC}", ' - This function lists available commands.')
+        print(f"{bcolors.OKGREEN}{bcolors.BOLD}openfile{bcolors.ENDC}", ' - This command opens a file stored in the same folder, just type in the file name at the next '
+                                                                        'prompt with the file extension, for example,', f"{bcolors.OKBLUE}{bcolors.UNDERLINE}file.txt{bcolors.ENDC}")
+        print('')
     else:
-        if Uinput != 'openfile':  # Invalid Command Response to any invalid user input
-            print(f"{bcolors.FAIL}{bcolors.BOLD}Error: Invalid Command.{bcolors.ENDC}")
+        print(f"{bcolors.FAIL}{bcolors.BOLD}Error: Invalid Command.{bcolors.ENDC}")
